@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app.models.ninja_model import Ninja
+from flask_app.models import ninja_model
 
 class Dojo:
     def __init__(self, data):
@@ -46,6 +46,6 @@ class Dojo:
                 'created_at': i['ninjas.created_at'],
                 'updated_at': i['ninjas.updated_at']
             }
-            d.ninjas.append(Ninja(n))
+            d.ninjas.append(ninja_model.Ninja(n))
         return d
 
